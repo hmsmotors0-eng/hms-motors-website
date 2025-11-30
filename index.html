@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMS MOTORS - Professional Bike Repair Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-content {
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background: #1a2f5a;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23333" width="1200" height="600"/><path fill="%23444" d="M0 300 Q300 200 600 300 T1200 300 V600 H0 Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 5rem 0;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #ffd700;
+            color: #1a2f5a;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255,215,0,0.4);
+        }
+        
+        .services {
+            padding: 4rem 0;
+            background: #f4f4f4;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1e3c72;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+        }
+        
+        .about {
+            padding: 4rem 0;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text h3 {
+            color: #1e3c72;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .about-features {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        
+        .about-features li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .about-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .contact {
+            padding: 4rem 0;
+            background: #1e3c72;
+            color: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-item h3 {
+            color: #ffd700;
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background: #1a2f5a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">🏍️ HMS MOTORS</div>
+                <p class="tagline">Your Trusted Bike Repair Experts</p>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Expert Bike Repair & Maintenance</h2>
+            <p>Quality Service You Can Trust</p>
+            <a href="#contact" class="cta-button">Book Your Service</a>
+        </div>
+    </section>
+    
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>General Repair</h3>
+                    <p>Complete bike diagnostics and repair services for all makes and models</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Engine Service</h3>
+                    <p>Expert engine tuning, oil changes, and performance optimization</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛞</div>
+                    <h3>Tire & Brake</h3>
+                    <p>Tire replacement, balancing, and brake system maintenance</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔋</div>
+                    <h3>Electrical Work</h3>
+                    <p>Battery replacement, wiring repairs, and electrical diagnostics</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Body Work</h3>
+                    <p>Dent removal, painting, and complete body restoration</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Maintenance</h3>
+                    <p>Regular servicing, chain lubrication, and preventive care</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Why Choose HMS MOTORS?</h3>
+                    <p>With years of experience in bike repair and maintenance, HMS MOTORS has become the go-to destination for bike owners who demand quality and reliability.</p>
+                    <ul class="about-features">
+                        <li>Certified and experienced mechanics</li>
+                        <li>State-of-the-art diagnostic equipment</li>
+                        <li>Genuine spare parts</li>
+                        <li>Competitive pricing</li>
+                        <li>Quick turnaround time</li>
+                        <li>Customer satisfaction guaranteed</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <svg width="100%" height="300" viewBox="0 0 400 300">
+                        <rect fill="#1e3c72" width="400" height="300" rx="10"/>
+                        <circle cx="200" cy="150" r="80" fill="#2a5298"/>
+                        <path d="M 120 150 L 280 150 M 200 70 L 200 230" stroke="#ffd700" stroke-width="8" stroke-linecap="round"/>
+                        <circle cx="200" cy="150" r="60" fill="none" stroke="#ffd700" stroke-width="4"/>
+                        <text x="200" y="260" text-anchor="middle" fill="white" font-size="20" font-weight="bold">Quality Service</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h3>📍 Location</h3>
+                    <p>Visit us at our workshop<br>Open Mon-Sat: 9AM - 7PM</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📞 Phone</h3>
+                    <p>Call us for appointments<br>+91 XXXX-XXXXXX</p>
+                </div>
+                <div class="contact-item">
+                    <h3>✉️ Email</h3>
+                    <p>hmsmotors0@gmail.com<br>Quick response guaranteed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 HMS MOTORS. All rights reserved.</p>
+            <p>Professional Bike Repair Services</p>
+        </div>
+    </footer>
+</body>
+</html>

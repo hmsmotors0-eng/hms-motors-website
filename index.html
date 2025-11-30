@@ -11,226 +11,241 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #ffffff;
-            background-color: #000000;
+            font-family: 'Arial', sans-serif;
+            background: #000;
+            color: #fff;
         }
-        
-        /* Header Styles */
+
+        /* Header */
         header {
-            background: linear-gradient(135deg, #0066cc 0%, #004999 100%);
-            padding: 1rem 0;
+            background: linear-gradient(135deg, #0066cc, #004999);
+            padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 102, 204, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.5);
         }
-        
-        .header-content {
-            max-width: 1200px;
+
+        .header-container {
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
         }
-        
+
         .logo-section {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-        
+
         .logo-img {
-            height: 60px;
-            width: auto;
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
         }
-        
+
         .logo-text h1 {
-            font-size: 2rem;
+            font-size: 32px;
             font-weight: bold;
-            color: #ffffff;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        
+
         .logo-text p {
-            font-size: 0.9rem;
+            font-size: 14px;
             color: #66b3ff;
         }
-        
+
         .header-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 15px;
         }
-        
+
         .btn {
-            padding: 0.8rem 1.5rem;
+            padding: 12px 25px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
+            font-size: 14px;
+            text-transform: uppercase;
         }
-        
-        .btn-primary {
-            background: #ffffff;
+
+        .btn-login {
+            background: #fff;
             color: #0066cc;
         }
-        
-        .btn-primary:hover {
+
+        .btn-login:hover {
             background: #66b3ff;
-            color: #000000;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.3);
         }
-        
-        .btn-secondary {
-            background: #004999;
-            color: #ffffff;
-            border: 2px solid #66b3ff;
+
+        .btn-owner {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
         }
-        
-        .btn-secondary:hover {
-            background: #66b3ff;
-            color: #000000;
+
+        .btn-owner:hover {
+            background: #fff;
+            color: #0066cc;
         }
-        
+
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #004999 0%, #0066cc 100%);
-            padding: 4rem 0;
+            background: linear-gradient(135deg, #004999, #0066cc);
+            padding: 80px 20px;
             text-align: center;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
+
         .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
         }
-        
+
         .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 24px;
             color: #66b3ff;
+            margin-bottom: 30px;
         }
-        
+
         .badge {
             display: inline-block;
-            background: #ffffff;
+            background: #fff;
             color: #0066cc;
-            padding: 0.8rem 2rem;
+            padding: 15px 40px;
             border-radius: 50px;
             font-weight: bold;
-            font-size: 1.2rem;
-            margin-top: 1rem;
+            font-size: 20px;
+            box-shadow: 0 5px 20px rgba(255,255,255,0.3);
         }
-        
+
         /* Services Section */
         .services {
-            padding: 4rem 0;
+            padding: 80px 20px;
             background: #1a1a1a;
         }
-        
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
+            font-size: 42px;
+            margin-bottom: 60px;
             color: #66b3ff;
+            text-transform: uppercase;
         }
-        
+
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
-        
+
         .service-card {
-            background: linear-gradient(135deg, #0066cc 0%, #004999 100%);
-            padding: 2rem;
-            border-radius: 15px;
+            background: linear-gradient(135deg, #0066cc, #004999);
+            padding: 40px 30px;
+            border-radius: 20px;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 2px solid #66b3ff;
+            transition: all 0.3s;
+            border: 3px solid #66b3ff;
+            cursor: pointer;
         }
-        
+
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.5);
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 102, 204, 0.6);
         }
-        
+
         .service-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-size: 60px;
+            margin-bottom: 20px;
         }
-        
+
         .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #ffffff;
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #fff;
         }
-        
+
         .service-card p {
             color: #66b3ff;
+            font-size: 16px;
         }
-        
+
         /* Contact Section */
         .contact {
-            padding: 4rem 0;
-            background: #000000;
+            padding: 80px 20px;
+            background: #000;
         }
-        
+
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
-        
+
         .contact-card {
-            background: linear-gradient(135deg, #0066cc 0%, #004999 100%);
-            padding: 2rem;
-            border-radius: 15px;
+            background: linear-gradient(135deg, #0066cc, #004999);
+            padding: 40px 30px;
+            border-radius: 20px;
             text-align: center;
-            border: 2px solid #66b3ff;
+            border: 3px solid #66b3ff;
+            transition: all 0.3s;
         }
-        
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 102, 204, 0.6);
+        }
+
         .contact-card h3 {
             color: #66b3ff;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-size: 24px;
         }
-        
+
+        .contact-card p {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
         .contact-card a {
-            color: #ffffff;
+            color: #fff;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s;
         }
-        
+
         .contact-card a:hover {
             color: #66b3ff;
         }
-        
+
         /* Footer */
         footer {
-            background: linear-gradient(135deg, #004999 0%, #0066cc 100%);
-            padding: 2rem 0;
+            background: linear-gradient(135deg, #004999, #0066cc);
+            padding: 40px 20px;
             text-align: center;
         }
-        
+
         footer p {
-            margin: 0.5rem 0;
+            margin: 10px 0;
+            font-size: 16px;
         }
-        
+
         /* Modal Styles */
         .modal {
             display: none;
@@ -240,202 +255,222 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.95);
             overflow-y: auto;
         }
-        
+
         .modal-content {
-            background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
-            margin: 2% auto;
-            padding: 2rem;
-            border: 2px solid #0066cc;
-            border-radius: 15px;
+            background: linear-gradient(135deg, #1a1a1a, #000);
+            margin: 50px auto;
+            padding: 40px;
+            border: 3px solid #0066cc;
+            border-radius: 20px;
             width: 90%;
             max-width: 600px;
-            position: relative;
+            box-shadow: 0 10px 50px rgba(0, 102, 204, 0.5);
         }
-        
+
         .close {
             color: #66b3ff;
             float: right;
-            font-size: 2rem;
+            font-size: 40px;
             font-weight: bold;
             cursor: pointer;
             line-height: 1;
+            transition: color 0.3s;
         }
-        
+
         .close:hover {
-            color: #ffffff;
+            color: #fff;
         }
-        
+
+        .modal h2 {
+            color: #66b3ff;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 25px;
         }
-        
+
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 10px;
             color: #66b3ff;
             font-weight: bold;
+            font-size: 16px;
         }
-        
+
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 0.8rem;
+            padding: 15px;
             border: 2px solid #0066cc;
-            border-radius: 5px;
+            border-radius: 10px;
             background: #1a1a1a;
-            color: #ffffff;
-            font-size: 1rem;
+            color: #fff;
+            font-size: 16px;
+            transition: all 0.3s;
         }
-        
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-        
+
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: #66b3ff;
+            box-shadow: 0 0 15px rgba(0, 102, 204, 0.5);
         }
-        
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
         .btn-submit {
-            background: linear-gradient(135deg, #0066cc 0%, #004999 100%);
-            color: #ffffff;
-            padding: 1rem 2rem;
-            border: 2px solid #66b3ff;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
             width: 100%;
-            font-size: 1.1rem;
+            padding: 18px;
+            background: linear-gradient(135deg, #0066cc, #004999);
+            color: #fff;
+            border: 2px solid #66b3ff;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
             transition: all 0.3s;
+            text-transform: uppercase;
         }
-        
+
         .btn-submit:hover {
-            background: linear-gradient(135deg, #66b3ff 0%, #0066cc 100%);
-            transform: translateY(-2px);
+            background: linear-gradient(135deg, #66b3ff, #0066cc);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.5);
         }
-        
+
         .portal-options {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-top: 2rem;
+            gap: 20px;
+            margin-top: 30px;
         }
-        
+
         .portal-btn {
-            background: linear-gradient(135deg, #0066cc 0%, #004999 100%);
-            color: #ffffff;
-            padding: 2rem 1rem;
-            border: 2px solid #66b3ff;
-            border-radius: 10px;
+            background: linear-gradient(135deg, #0066cc, #004999);
+            color: #fff;
+            padding: 40px 20px;
+            border: 3px solid #66b3ff;
+            border-radius: 15px;
             font-weight: bold;
+            font-size: 18px;
             cursor: pointer;
-            font-size: 1.1rem;
             transition: all 0.3s;
             text-align: center;
         }
-        
+
         .portal-btn:hover {
-            background: linear-gradient(135deg, #66b3ff 0%, #0066cc 100%);
-            transform: scale(1.05);
+            background: linear-gradient(135deg, #66b3ff, #0066cc);
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.6);
         }
-        
+
         /* Bill Styles */
         .bill-container {
-            background: #ffffff;
-            color: #000000;
-            padding: 2rem;
-            border-radius: 10px;
-            max-width: 800px;
-            margin: 2rem auto;
+            background: #fff;
+            color: #000;
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 900px;
+            margin: 0 auto;
         }
-        
+
         .bill-header {
             text-align: center;
-            border-bottom: 3px solid #0066cc;
-            padding-bottom: 1rem;
-            margin-bottom: 2rem;
+            border-bottom: 4px solid #0066cc;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
         }
-        
+
         .bill-header img {
             max-width: 150px;
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
         }
-        
+
         .bill-header h2 {
             color: #0066cc;
-            font-size: 2rem;
+            font-size: 36px;
+            margin-bottom: 10px;
         }
-        
+
         .bill-number {
             background: #0066cc;
-            color: #ffffff;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
+            color: #fff;
+            padding: 10px 30px;
+            border-radius: 10px;
             display: inline-block;
-            margin-top: 1rem;
+            margin-top: 15px;
+            font-size: 20px;
+            font-weight: bold;
         }
-        
+
         .bill-section {
-            margin-bottom: 2rem;
+            margin-bottom: 30px;
         }
-        
+
         .bill-section h3 {
             color: #0066cc;
-            border-bottom: 2px solid #66b3ff;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
+            border-bottom: 3px solid #66b3ff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 24px;
         }
-        
+
         .bill-row {
             display: flex;
             justify-content: space-between;
-            padding: 0.5rem 0;
+            padding: 12px 0;
+            border-bottom: 1px solid #ddd;
         }
-        
+
         .bill-total {
             background: #0066cc;
-            color: #ffffff;
-            padding: 1rem;
-            border-radius: 5px;
-            font-size: 1.5rem;
+            color: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            font-size: 28px;
             font-weight: bold;
             text-align: center;
-            margin: 2rem 0;
+            margin: 30px 0;
         }
-        
+
         .bill-qr {
             text-align: center;
-            margin: 2rem 0;
+            margin: 30px 0;
         }
-        
+
         .bill-qr img {
-            max-width: 200px;
-            border: 2px solid #0066cc;
-            border-radius: 10px;
+            max-width: 250px;
+            border: 3px solid #0066cc;
+            border-radius: 15px;
+            padding: 10px;
         }
-        
+
         .bill-actions {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-top: 2rem;
+            gap: 15px;
+            margin-top: 30px;
         }
-        
+
         .bill-footer {
             text-align: center;
-            border-top: 2px solid #0066cc;
-            padding-top: 1rem;
-            margin-top: 2rem;
+            border-top: 3px solid #0066cc;
+            padding-top: 20px;
+            margin-top: 30px;
             color: #666;
         }
-        
+
         @media print {
             body * {
                 visibility: hidden;
@@ -453,61 +488,71 @@
                 display: none;
             }
         }
-        
-        /* Responsive Design */
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .header-content {
+            .header-container {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 20px;
             }
-            
+
+            .logo-text h1 {
+                font-size: 24px;
+            }
+
             .hero h2 {
-                font-size: 2rem;
+                font-size: 32px;
             }
-            
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
             .portal-options {
                 grid-template-columns: 1fr;
             }
-            
+
             .bill-actions {
                 grid-template-columns: 1fr;
             }
-            
-            .logo-text h1 {
-                font-size: 1.5rem;
+
+            .services-grid {
+                grid-template-columns: 1fr;
             }
-        }
-        
-        .hidden {
-            display: none;
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="header-content">
+        <div class="header-container">
             <div class="logo-section">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/0719d3a9-fa1b-4154-a9b5-22f1913e6cd6/2025-11-30T15-41-06-894Z-5ea5ee68-chat-image-1764517266877-0.jpg" alt="HMS MOTORS Logo" class="logo-img">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/0719d3a9-fa1b-4154-a9b5-22f1913e6cd6/2025-11-30T15-41-06-894Z-5ea5ee68-chat-image-1764517266877-0.jpg" alt="HMS MOTORS" class="logo-img">
                 <div class="logo-text">
                     <h1>HMS MOTORS</h1>
                     <p>Expert Bike Repair Services</p>
                 </div>
             </div>
             <div class="header-buttons">
-                <button class="btn btn-primary" onclick="openCustomerLogin()">LOGIN / BOOK SERVICE</button>
-                <button class="btn btn-secondary" onclick="openOwnerLogin()">OWNER LOGIN</button>
+                <button class="btn btn-login" onclick="openCustomerLogin()">LOGIN / BOOK SERVICE</button>
+                <button class="btn btn-owner" onclick="openOwnerLogin()">OWNER LOGIN</button>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <h2>Your Trusted Bike Care Partner</h2>
-            <p>Professional Repair Services for All Types of Bikes</p>
-            <div class="badge">🏆 30 Years of Excellence</div>
-        </div>
+        <h2>Your Trusted Bike Care Partner</h2>
+        <p>Professional Repair Services for All Types of Bikes</p>
+        <div class="badge">🏆 30 Years of Excellence</div>
     </section>
 
     <!-- Services Section -->
@@ -580,7 +625,7 @@
                 <div class="contact-card">
                     <h3>🕒 Working Hours</h3>
                     <p>Monday - Saturday<br>9:00 AM - 7:00 PM</p>
-                    <p style="color: #66b3ff;">Sunday: Closed</p>
+                    <p style="color: #66b3ff; margin-top: 10px;">Sunday: Closed</p>
                 </div>
             </div>
         </div>
@@ -588,17 +633,15 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2025 HMS MOTORS. All Rights Reserved.</p>
-            <p><strong>30 Years of Trusted Service</strong></p>
-        </div>
+        <p>&copy; 2025 HMS MOTORS. All Rights Reserved.</p>
+        <p><strong>30 Years of Trusted Service</strong></p>
     </footer>
 
     <!-- Customer Login Modal -->
     <div id="customerLoginModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('customerLoginModal')">&times;</span>
-            <h2 style="color: #66b3ff; text-align: center; margin-bottom: 2rem;">Customer Login</h2>
+            <h2>Customer Login</h2>
             <form id="customerLoginForm">
                 <div class="form-group">
                     <label>Name *</label>
@@ -621,13 +664,13 @@
     <div id="customerPortalModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('customerPortalModal')">&times;</span>
-            <h2 style="color: #66b3ff; text-align: center; margin-bottom: 2rem;">Welcome, <span id="welcomeName"></span>!</h2>
+            <h2>Welcome, <span id="welcomeName"></span>!</h2>
             <div class="portal-options">
                 <button class="portal-btn" onclick="openBookService()">
-                    🔧<br>Book Repair Service
+                    🔧<br><br>Book Repair Service
                 </button>
                 <button class="portal-btn" onclick="openScheduleAppointment()">
-                    📅<br>Schedule Appointment
+                    📅<br><br>Schedule Appointment
                 </button>
             </div>
         </div>
@@ -637,7 +680,7 @@
     <div id="bookServiceModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('bookServiceModal')">&times;</span>
-            <h2 style="color: #66b3ff; text-align: center; margin-bottom: 2rem;">Book Repair Service</h2>
+            <h2>Book Repair Service</h2>
             <form id="bookServiceForm">
                 <div class="form-group">
                     <label>Select Your Bike *</label>
@@ -693,7 +736,7 @@
     <div id="scheduleAppointmentModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('scheduleAppointmentModal')">&times;</span>
-            <h2 style="color: #66b3ff; text-align: center; margin-bottom: 2rem;">Schedule Appointment</h2>
+            <h2>Schedule Appointment</h2>
             <form id="scheduleAppointmentForm">
                 <div class="form-group">
                     <label>Appointment Type *</label>
@@ -728,7 +771,7 @@
     <div id="ownerLoginModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('ownerLoginModal')">&times;</span>
-            <h2 style="color: #66b3ff; text-align: center; margin-bottom: 2rem;">Owner Login</h2>
+            <h2>Owner Login</h2>
             <form id="ownerLoginForm">
                 <div class="form-group">
                     <label>Username *</label>
@@ -747,7 +790,7 @@
     <div id="ownerDashboardModal" class="modal">
         <div class="modal-content" style="max-width: 900px;">
             <span class="close" onclick="closeModal('ownerDashboardModal')">&times;</span>
-            <h2 style="color: #66b3ff; text-align: center; margin-bottom: 2rem;">Bill Generation System</h2>
+            <h2>Bill Generation System</h2>
             <form id="billGenerationForm">
                 <div class="form-group">
                     <label>Customer Name *</label>
@@ -782,9 +825,7 @@
     <div id="billDisplayModal" class="modal">
         <div class="modal-content" style="max-width: 900px;">
             <span class="close" onclick="closeModal('billDisplayModal')">&times;</span>
-            <div id="billContent" class="bill-container">
-                <!-- Bill content will be generated here -->
-            </div>
+            <div id="billContent" class="bill-container"></div>
             <div class="bill-actions">
                 <button class="btn-submit" onclick="sendBillWhatsApp()">📱 Send via WhatsApp</button>
                 <button class="btn-submit" onclick="downloadBillPDF()">📄 Download PDF</button>
@@ -794,11 +835,9 @@
     </div>
 
     <script>
-        // Global variables
         let customerData = {};
         let currentBillData = {};
 
-        // Modal functions
         function openModal(modalId) {
             document.getElementById(modalId).style.display = 'block';
         }
@@ -825,7 +864,6 @@
             openModal('scheduleAppointmentModal');
         }
 
-        // Customer Login
         document.getElementById('customerLoginForm').addEventListener('submit', function(e) {
             e.preventDefault();
             customerData = {
@@ -838,7 +876,6 @@
             openModal('customerPortalModal');
         });
 
-        // Book Service
         document.getElementById('bookServiceForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const bikeModel = document.getElementById('bikeModel').value;
@@ -862,7 +899,6 @@
             alert('Booking request sent via WhatsApp!');
         });
 
-        // Schedule Appointment
         document.getElementById('scheduleAppointmentForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const appointmentType = document.getElementById('appointmentType').value;
@@ -886,7 +922,6 @@
             alert('Appointment request sent via WhatsApp!');
         });
 
-        // Owner Login
         document.getElementById('ownerLoginForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const username = document.getElementById('ownerUsername').value;
@@ -900,7 +935,6 @@
             }
         });
 
-        // Generate Bill
         document.getElementById('billGenerationForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -922,10 +956,10 @@
                 <div class="bill-header">
                     <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/0719d3a9-fa1b-4154-a9b5-22f1913e6cd6/2025-11-30T15-41-06-894Z-5ea5ee68-chat-image-1764517266877-0.jpg" alt="HMS MOTORS">
                     <h2>HMS MOTORS</h2>
-                    <p>Expert Bike Repair Services</p>
-                    <p>30 Years of Excellence</p>
+                    <p style="color: #666; font-size: 16px;">Expert Bike Repair Services</p>
+                    <p style="color: #666; font-size: 14px;">30 Years of Excellence</p>
                     <div class="bill-number">Invoice #${currentBillData.billNumber}</div>
-                    <p style="margin-top: 1rem;">Date: ${currentBillData.date}</p>
+                    <p style="margin-top: 15px; color: #666;">Date: ${currentBillData.date}</p>
                 </div>
 
                 <div class="bill-section">
@@ -950,7 +984,7 @@
 
                 <div class="bill-section">
                     <h3>Service Details</h3>
-                    <p style="white-space: pre-wrap;">${currentBillData.serviceDetails}</p>
+                    <p style="white-space: pre-wrap; padding: 15px; background: #f5f5f5; border-radius: 10px;">${currentBillData.serviceDetails}</p>
                 </div>
 
                 <div class="bill-total">
@@ -958,18 +992,18 @@
                 </div>
 
                 <div class="bill-qr">
-                    <h3 style="color: #0066cc;">Scan to Pay</h3>
+                    <h3 style="color: #0066cc; margin-bottom: 15px;">Scan to Pay</h3>
                     <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/0719d3a9-fa1b-4154-a9b5-22f1913e6cd6/2025-11-30T15-41-07-034Z-a734852c-chat-image-1764517267016-1.jpg" alt="Payment QR Code">
-                    <p style="color: #666; margin-top: 1rem;">PhonePe Payment</p>
+                    <p style="color: #666; margin-top: 15px; font-weight: bold;">PhonePe Payment</p>
                 </div>
 
                 <div class="bill-footer">
-                    <p><strong>HMS MOTORS</strong></p>
-                    <p>📞 Suhel Sharif: 9886951220 | Ashran: 9945534032</p>
+                    <p style="font-size: 18px; color: #0066cc; font-weight: bold;">HMS MOTORS</p>
+                    <p style="margin-top: 10px;">📞 Suhel Sharif: 9886951220 | Ashran: 9945534032</p>
                     <p>✉️ hmsmotors0@gmail.com</p>
-                    <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=12.918417,77.605361" target="_blank">View Location</a></p>
-                    <p style="margin-top: 1rem;">Thank you for choosing HMS MOTORS!</p>
-                    <p>30 Years of Trusted Service</p>
+                    <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=12.918417,77.605361" target="_blank" style="color: #0066cc;">View Location</a></p>
+                    <p style="margin-top: 15px; font-weight: bold;">Thank you for choosing HMS MOTORS!</p>
+                    <p style="color: #0066cc;">30 Years of Trusted Service</p>
                 </div>
             `;
 
@@ -978,7 +1012,6 @@
             openModal('billDisplayModal');
         });
 
-        // Send Bill via WhatsApp
         function sendBillWhatsApp() {
             const message = `*INVOICE - HMS MOTORS*%0A%0A` +
                 `*Invoice Number:* ${currentBillData.billNumber}%0A` +
@@ -1002,7 +1035,6 @@
             window.open(`https://wa.me/919945534032?text=${message}`, '_blank');
         }
 
-        // Download Bill as PDF
         function downloadBillPDF() {
             const element = document.getElementById('billContent');
             const opt = {
@@ -1015,19 +1047,16 @@
             html2pdf().set(opt).from(element).save();
         }
 
-        // Print Bill
         function printBill() {
             window.print();
         }
 
-        // Close modal when clicking outside
         window.onclick = function(event) {
             if (event.target.classList.contains('modal')) {
                 event.target.style.display = 'none';
             }
         }
 
-        // Set minimum date for date inputs
         const today = new Date().toISOString().split('T')[0];
         document.getElementById('preferredDate').setAttribute('min', today);
         document.getElementById('appointmentDate').setAttribute('min', today);

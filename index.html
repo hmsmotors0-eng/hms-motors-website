@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HMS MOTORS - Professional Bike Repair Services</title>
+    <title>HMS MOTORS - Expert Bike Repair Services</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -14,14 +15,95 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #ffffff;
+            background-color: #000000;
         }
         
+        /* Header Styles */
         header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 2rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, #0066cc 0%, #004999 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 102, 204, 0.3);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-img {
+            height: 60px;
+            width: auto;
+        }
+        
+        .logo-text h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            color: #66b3ff;
+        }
+        
+        .header-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: #ffffff;
+            color: #0066cc;
+        }
+        
+        .btn-primary:hover {
+            background: #66b3ff;
+            color: #000000;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: #004999;
+            color: #ffffff;
+            border: 2px solid #66b3ff;
+        }
+        
+        .btn-secondary:hover {
+            background: #66b3ff;
+            color: #000000;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #004999 0%, #0066cc 100%);
+            padding: 4rem 0;
+            text-align: center;
         }
         
         .container {
@@ -30,97 +112,40 @@
             padding: 0 20px;
         }
         
-        .header-content {
-            text-align: center;
-        }
-        
-        .logo {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
-        .tagline {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        nav {
-            background: #1a2f5a;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        nav ul li {
-            margin: 0 1.5rem;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: #ffd700;
-        }
-        
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23333" width="1200" height="600"/><path fill="%23444" d="M0 300 Q300 200 600 300 T1200 300 V600 H0 Z"/></svg>');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 5rem 0;
-        }
-        
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #66b3ff;
         }
         
-        .cta-button {
+        .badge {
             display: inline-block;
-            background: #ffd700;
-            color: #1a2f5a;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 5px;
+            background: #ffffff;
+            color: #0066cc;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
             font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 1.2rem;
+            margin-top: 1rem;
         }
         
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255,215,0,0.4);
-        }
-        
+        /* Services Section */
         .services {
             padding: 4rem 0;
-            background: #f4f4f4;
+            background: #1a1a1a;
         }
         
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #1e3c72;
+            color: #66b3ff;
         }
         
         .services-grid {
@@ -130,70 +155,38 @@
         }
         
         .service-card {
-            background: white;
+            background: linear-gradient(135deg, #0066cc 0%, #004999 100%);
             padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            border-radius: 15px;
             text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid #66b3ff;
         }
         
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.5);
         }
         
         .service-icon {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
         }
         
         .service-card h3 {
-            color: #1e3c72;
-            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
         }
         
-        .about {
-            padding: 4rem 0;
+        .service-card p {
+            color: #66b3ff;
         }
         
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .about-text h3 {
-            color: #1e3c72;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .about-features {
-            list-style: none;
-            margin-top: 1.5rem;
-        }
-        
-        .about-features li {
-            padding: 0.5rem 0;
-            padding-left: 2rem;
-            position: relative;
-        }
-        
-        .about-features li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #ffd700;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        
+        /* Contact Section */
         .contact {
             padding: 4rem 0;
-            background: #1e3c72;
-            color: white;
+            background: #000000;
         }
         
         .contact-grid {
@@ -203,157 +196,841 @@
             margin-top: 2rem;
         }
         
-        .contact-item {
+        .contact-card {
+            background: linear-gradient(135deg, #0066cc 0%, #004999 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid #66b3ff;
+        }
+        
+        .contact-card h3 {
+            color: #66b3ff;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .contact-card a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .contact-card a:hover {
+            color: #66b3ff;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #004999 0%, #0066cc 100%);
+            padding: 2rem 0;
             text-align: center;
         }
         
-        .contact-item h3 {
-            color: #ffd700;
+        footer p {
+            margin: 0.5rem 0;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+            margin: 2% auto;
+            padding: 2rem;
+            border: 2px solid #0066cc;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+        }
+        
+        .close {
+            color: #66b3ff;
+            float: right;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+        }
+        
+        .close:hover {
+            color: #ffffff;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #66b3ff;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #0066cc;
+            border-radius: 5px;
+            background: #1a1a1a;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #66b3ff;
+        }
+        
+        .btn-submit {
+            background: linear-gradient(135deg, #0066cc 0%, #004999 100%);
+            color: #ffffff;
+            padding: 1rem 2rem;
+            border: 2px solid #66b3ff;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        .btn-submit:hover {
+            background: linear-gradient(135deg, #66b3ff 0%, #0066cc 100%);
+            transform: translateY(-2px);
+        }
+        
+        .portal-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .portal-btn {
+            background: linear-gradient(135deg, #0066cc 0%, #004999 100%);
+            color: #ffffff;
+            padding: 2rem 1rem;
+            border: 2px solid #66b3ff;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .portal-btn:hover {
+            background: linear-gradient(135deg, #66b3ff 0%, #0066cc 100%);
+            transform: scale(1.05);
+        }
+        
+        /* Bill Styles */
+        .bill-container {
+            background: #ffffff;
+            color: #000000;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+        
+        .bill-header {
+            text-align: center;
+            border-bottom: 3px solid #0066cc;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .bill-header img {
+            max-width: 150px;
             margin-bottom: 1rem;
         }
         
-        footer {
-            background: #1a2f5a;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
+        .bill-header h2 {
+            color: #0066cc;
+            font-size: 2rem;
         }
         
+        .bill-number {
+            background: #0066cc;
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        
+        .bill-section {
+            margin-bottom: 2rem;
+        }
+        
+        .bill-section h3 {
+            color: #0066cc;
+            border-bottom: 2px solid #66b3ff;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .bill-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+        }
+        
+        .bill-total {
+            background: #0066cc;
+            color: #ffffff;
+            padding: 1rem;
+            border-radius: 5px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .bill-qr {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .bill-qr img {
+            max-width: 200px;
+            border: 2px solid #0066cc;
+            border-radius: 10px;
+        }
+        
+        .bill-actions {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .bill-footer {
+            text-align: center;
+            border-top: 2px solid #0066cc;
+            padding-top: 1rem;
+            margin-top: 2rem;
+            color: #666;
+        }
+        
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            .bill-container, .bill-container * {
+                visibility: visible;
+            }
+            .bill-container {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+            .bill-actions {
+                display: none;
+            }
+        }
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .about-content {
-                grid-template-columns: 1fr;
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
             }
             
             .hero h2 {
                 font-size: 2rem;
             }
             
-            nav ul li {
-                margin: 0.5rem 1rem;
+            .portal-options {
+                grid-template-columns: 1fr;
             }
+            
+            .bill-actions {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">🏍️ HMS MOTORS</div>
-                <p class="tagline">Your Trusted Bike Repair Experts</p>
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/0719d3a9-fa1b-4154-a9b5-22f1913e6cd6/2025-11-30T15-41-06-894Z-5ea5ee68-chat-image-1764517266877-0.jpg" alt="HMS MOTORS Logo" class="logo-img">
+                <div class="logo-text">
+                    <h1>HMS MOTORS</h1>
+                    <p>Expert Bike Repair Services</p>
+                </div>
+            </div>
+            <div class="header-buttons">
+                <button class="btn btn-primary" onclick="openCustomerLogin()">LOGIN / BOOK SERVICE</button>
+                <button class="btn btn-secondary" onclick="openOwnerLogin()">OWNER LOGIN</button>
             </div>
         </div>
     </header>
-    
-    <nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-    
-    <section id="home" class="hero">
-        <div class="container">
-            <h2>Expert Bike Repair & Maintenance</h2>
-            <p>Quality Service You Can Trust</p>
-            <a href="#contact" class="cta-button">Book Your Service</a>
+            <h2>Your Trusted Bike Care Partner</h2>
+            <p>Professional Repair Services for All Types of Bikes</p>
+            <div class="badge">🏆 30 Years of Excellence</div>
         </div>
     </section>
-    
-    <section id="services" class="services">
+
+    <!-- Services Section -->
+    <section class="services">
         <div class="container">
             <h2 class="section-title">Our Services</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">🔧</div>
-                    <h3>General Repair</h3>
-                    <p>Complete bike diagnostics and repair services for all makes and models</p>
+                    <h3>General Maintenance</h3>
+                    <p>Complete bike servicing and routine maintenance</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">⚙️</div>
-                    <h3>Engine Service</h3>
-                    <p>Expert engine tuning, oil changes, and performance optimization</p>
+                    <h3>Engine Repair</h3>
+                    <p>Expert engine diagnostics and repair services</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🛞</div>
-                    <h3>Tire & Brake</h3>
-                    <p>Tire replacement, balancing, and brake system maintenance</p>
+                    <h3>Tire Services</h3>
+                    <p>Tire replacement, balancing, and alignment</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🔋</div>
+                    <div class="service-icon">🛢️</div>
+                    <h3>Oil Change</h3>
+                    <p>Quality oil change with premium lubricants</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔩</div>
+                    <h3>Brake Service</h3>
+                    <p>Brake inspection, repair, and replacement</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
                     <h3>Electrical Work</h3>
-                    <p>Battery replacement, wiring repairs, and electrical diagnostics</p>
+                    <p>Complete electrical system diagnostics</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🎨</div>
-                    <h3>Body Work</h3>
-                    <p>Dent removal, painting, and complete body restoration</p>
+                    <h3>Custom Modifications</h3>
+                    <p>Personalized bike customization services</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🛡️</div>
-                    <h3>Maintenance</h3>
-                    <p>Regular servicing, chain lubrication, and preventive care</p>
+                    <div class="service-icon">🔍</div>
+                    <h3>Inspection Services</h3>
+                    <p>Comprehensive bike health checkup</p>
                 </div>
             </div>
         </div>
     </section>
-    
-    <section id="about" class="about">
+
+    <!-- Contact Section -->
+    <section class="contact">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Why Choose HMS MOTORS?</h3>
-                    <p>With years of experience in bike repair and maintenance, HMS MOTORS has become the go-to destination for bike owners who demand quality and reliability.</p>
-                    <ul class="about-features">
-                        <li>Certified and experienced mechanics</li>
-                        <li>State-of-the-art diagnostic equipment</li>
-                        <li>Genuine spare parts</li>
-                        <li>Competitive pricing</li>
-                        <li>Quick turnaround time</li>
-                        <li>Customer satisfaction guaranteed</li>
-                    </ul>
-                </div>
-                <div class="about-image">
-                    <svg width="100%" height="300" viewBox="0 0 400 300">
-                        <rect fill="#1e3c72" width="400" height="300" rx="10"/>
-                        <circle cx="200" cy="150" r="80" fill="#2a5298"/>
-                        <path d="M 120 150 L 280 150 M 200 70 L 200 230" stroke="#ffd700" stroke-width="8" stroke-linecap="round"/>
-                        <circle cx="200" cy="150" r="60" fill="none" stroke="#ffd700" stroke-width="4"/>
-                        <text x="200" y="260" text-anchor="middle" fill="white" font-size="20" font-weight="bold">Quality Service</text>
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title" style="color: white;">Get In Touch</h2>
+            <h2 class="section-title">Contact Us</h2>
             <div class="contact-grid">
-                <div class="contact-item">
-                    <h3>📍 Location</h3>
-                    <p>Visit us at our workshop<br>Open Mon-Sat: 9AM - 7PM</p>
+                <div class="contact-card">
+                    <h3>📞 Call Us</h3>
+                    <p><a href="tel:9886951220">Suhel Sharif: 9886951220</a></p>
+                    <p><a href="tel:9945534032">Ashran: 9945534032</a></p>
                 </div>
-                <div class="contact-item">
-                    <h3>📞 Phone</h3>
-                    <p>Call us for appointments<br>+91 XXXX-XXXXXX</p>
-                </div>
-                <div class="contact-item">
+                <div class="contact-card">
                     <h3>✉️ Email</h3>
-                    <p>hmsmotors0@gmail.com<br>Quick response guaranteed</p>
+                    <p><a href="mailto:hmsmotors0@gmail.com">hmsmotors0@gmail.com</a></p>
+                </div>
+                <div class="contact-card">
+                    <h3>📍 Location</h3>
+                    <p><a href="https://www.google.com/maps/search/?api=1&query=12.918417,77.605361" target="_blank">View on Google Maps</a></p>
+                </div>
+                <div class="contact-card">
+                    <h3>🕒 Working Hours</h3>
+                    <p>Monday - Saturday<br>9:00 AM - 7:00 PM</p>
+                    <p style="color: #66b3ff;">Sunday: Closed</p>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 HMS MOTORS. All rights reserved.</p>
-            <p>Professional Bike Repair Services</p>
+            <p>&copy; 2025 HMS MOTORS. All Rights Reserved.</p>
+            <p><strong>30 Years of Trusted Service</strong></p>
         </div>
     </footer>
+
+    <!-- Customer Login Modal -->
+    <div id="customerLoginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('customerLoginModal')">&times;</span>
+            <h2 style="color: #66b3ff; text-align: center; margin-bottom: 2rem;">Customer Login</h2>
+            <form id="customerLoginForm">
+                <div class="form-group">
+                    <label>Name *</label>
+                    <input type="text" id="customerName" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone *</label>
+                    <input type="tel" id="customerPhone" required>
+                </div>
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" id="customerEmail" required>
+                </div>
+                <button type="submit" class="btn-submit">LOGIN</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Customer Portal Modal -->
+    <div id="customerPortalModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('customerPortalModal')">&times;</span>
+            <h2 style="color: #66b3ff; text-align: center; margin-bottom: 2rem;">Welcome, <span id="welcomeName"></span>!</h2>
+            <div class="portal-options">
+                <button class="portal-btn" onclick="openBookService()">
+                    🔧<br>Book Repair Service
+                </button>
+                <button class="portal-btn" onclick="openScheduleAppointment()">
+                    📅<br>Schedule Appointment
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book Service Modal -->
+    <div id="bookServiceModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('bookServiceModal')">&times;</span>
+            <h2 style="color: #66b3ff; text-align: center; margin-bottom: 2rem;">Book Repair Service</h2>
+            <form id="bookServiceForm">
+                <div class="form-group">
+                    <label>Select Your Bike *</label>
+                    <select id="bikeModel" required>
+                        <option value="">Choose your bike model</option>
+                        <option value="Honda Activa">Honda Activa</option>
+                        <option value="Hero Splendor">Hero Splendor</option>
+                        <option value="Bajaj Pulsar">Bajaj Pulsar</option>
+                        <option value="Royal Enfield Classic">Royal Enfield Classic</option>
+                        <option value="TVS Apache">TVS Apache</option>
+                        <option value="Yamaha FZ">Yamaha FZ</option>
+                        <option value="KTM Duke">KTM Duke</option>
+                        <option value="Suzuki Gixxer">Suzuki Gixxer</option>
+                        <option value="Honda CB Shine">Honda CB Shine</option>
+                        <option value="Hero Passion">Hero Passion</option>
+                        <option value="Bajaj Avenger">Bajaj Avenger</option>
+                        <option value="TVS Jupiter">TVS Jupiter</option>
+                        <option value="Yamaha R15">Yamaha R15</option>
+                        <option value="Royal Enfield Bullet">Royal Enfield Bullet</option>
+                        <option value="Honda Dio">Honda Dio</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Service Type *</label>
+                    <select id="serviceType" required>
+                        <option value="">Choose service type</option>
+                        <option value="General Maintenance">General Maintenance</option>
+                        <option value="Engine Repair">Engine Repair</option>
+                        <option value="Tire Services">Tire Services</option>
+                        <option value="Oil Change">Oil Change</option>
+                        <option value="Brake Service">Brake Service</option>
+                        <option value="Electrical Work">Electrical Work</option>
+                        <option value="Custom Modifications">Custom Modifications</option>
+                        <option value="Inspection Services">Inspection Services</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Problem Description *</label>
+                    <textarea id="problemDescription" required placeholder="Describe the issue with your bike..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Date *</label>
+                    <input type="date" id="preferredDate" required>
+                </div>
+                <button type="submit" class="btn-submit">SUBMIT BOOKING</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Schedule Appointment Modal -->
+    <div id="scheduleAppointmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('scheduleAppointmentModal')">&times;</span>
+            <h2 style="color: #66b3ff; text-align: center; margin-bottom: 2rem;">Schedule Appointment</h2>
+            <form id="scheduleAppointmentForm">
+                <div class="form-group">
+                    <label>Appointment Type *</label>
+                    <select id="appointmentType" required>
+                        <option value="">Choose appointment type</option>
+                        <option value="Consultation">Consultation</option>
+                        <option value="Inspection">Inspection</option>
+                        <option value="Estimate">Estimate</option>
+                        <option value="Pickup">Pickup</option>
+                        <option value="Delivery">Delivery</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Date *</label>
+                    <input type="date" id="appointmentDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Time *</label>
+                    <input type="time" id="appointmentTime" required>
+                </div>
+                <div class="form-group">
+                    <label>Additional Notes</label>
+                    <textarea id="appointmentNotes" placeholder="Any specific requirements or notes..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">SCHEDULE APPOINTMENT</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Owner Login Modal -->
+    <div id="ownerLoginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('ownerLoginModal')">&times;</span>
+            <h2 style="color: #66b3ff; text-align: center; margin-bottom: 2rem;">Owner Login</h2>
+            <form id="ownerLoginForm">
+                <div class="form-group">
+                    <label>Username *</label>
+                    <input type="text" id="ownerUsername" required>
+                </div>
+                <div class="form-group">
+                    <label>Password *</label>
+                    <input type="password" id="ownerPassword" required>
+                </div>
+                <button type="submit" class="btn-submit">LOGIN</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Owner Dashboard Modal -->
+    <div id="ownerDashboardModal" class="modal">
+        <div class="modal-content" style="max-width: 900px;">
+            <span class="close" onclick="closeModal('ownerDashboardModal')">&times;</span>
+            <h2 style="color: #66b3ff; text-align: center; margin-bottom: 2rem;">Bill Generation System</h2>
+            <form id="billGenerationForm">
+                <div class="form-group">
+                    <label>Customer Name *</label>
+                    <input type="text" id="billCustomerName" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone *</label>
+                    <input type="tel" id="billCustomerPhone" required>
+                </div>
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" id="billCustomerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Bike Model *</label>
+                    <input type="text" id="billBikeModel" required>
+                </div>
+                <div class="form-group">
+                    <label>Service Details *</label>
+                    <textarea id="billServiceDetails" required placeholder="Enter detailed service information..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Amount (₹) *</label>
+                    <input type="number" id="billAmount" required min="0" step="0.01">
+                </div>
+                <button type="submit" class="btn-submit">GENERATE BILL</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bill Display Modal -->
+    <div id="billDisplayModal" class="modal">
+        <div class="modal-content" style="max-width: 900px;">
+            <span class="close" onclick="closeModal('billDisplayModal')">&times;</span>
+            <div id="billContent" class="bill-container">
+                <!-- Bill content will be generated here -->
+            </div>
+            <div class="bill-actions">
+                <button class="btn-submit" onclick="sendBillWhatsApp()">📱 Send via WhatsApp</button>
+                <button class="btn-submit" onclick="downloadBillPDF()">📄 Download PDF</button>
+                <button class="btn-submit" onclick="printBill()">🖨️ Print Bill</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let customerData = {};
+        let currentBillData = {};
+
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function openCustomerLogin() {
+            openModal('customerLoginModal');
+        }
+
+        function openOwnerLogin() {
+            openModal('ownerLoginModal');
+        }
+
+        function openBookService() {
+            closeModal('customerPortalModal');
+            openModal('bookServiceModal');
+        }
+
+        function openScheduleAppointment() {
+            closeModal('customerPortalModal');
+            openModal('scheduleAppointmentModal');
+        }
+
+        // Customer Login
+        document.getElementById('customerLoginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            customerData = {
+                name: document.getElementById('customerName').value,
+                phone: document.getElementById('customerPhone').value,
+                email: document.getElementById('customerEmail').value
+            };
+            document.getElementById('welcomeName').textContent = customerData.name;
+            closeModal('customerLoginModal');
+            openModal('customerPortalModal');
+        });
+
+        // Book Service
+        document.getElementById('bookServiceForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const bikeModel = document.getElementById('bikeModel').value;
+            const serviceType = document.getElementById('serviceType').value;
+            const problemDescription = document.getElementById('problemDescription').value;
+            const preferredDate = document.getElementById('preferredDate').value;
+
+            const message = `*NEW SERVICE BOOKING - HMS MOTORS*%0A%0A` +
+                `*Customer Details:*%0A` +
+                `Name: ${customerData.name}%0A` +
+                `Phone: ${customerData.phone}%0A` +
+                `Email: ${customerData.email}%0A%0A` +
+                `*Bike Model:* ${bikeModel}%0A` +
+                `*Service Type:* ${serviceType}%0A` +
+                `*Problem Description:* ${problemDescription}%0A` +
+                `*Preferred Date:* ${preferredDate}%0A%0A` +
+                `Thank you for choosing HMS MOTORS!`;
+
+            window.open(`https://wa.me/919945534032?text=${message}`, '_blank');
+            closeModal('bookServiceModal');
+            alert('Booking request sent via WhatsApp!');
+        });
+
+        // Schedule Appointment
+        document.getElementById('scheduleAppointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const appointmentType = document.getElementById('appointmentType').value;
+            const appointmentDate = document.getElementById('appointmentDate').value;
+            const appointmentTime = document.getElementById('appointmentTime').value;
+            const appointmentNotes = document.getElementById('appointmentNotes').value;
+
+            const message = `*NEW APPOINTMENT - HMS MOTORS*%0A%0A` +
+                `*Customer Details:*%0A` +
+                `Name: ${customerData.name}%0A` +
+                `Phone: ${customerData.phone}%0A` +
+                `Email: ${customerData.email}%0A%0A` +
+                `*Appointment Type:* ${appointmentType}%0A` +
+                `*Date:* ${appointmentDate}%0A` +
+                `*Time:* ${appointmentTime}%0A` +
+                `*Additional Notes:* ${appointmentNotes || 'None'}%0A%0A` +
+                `Thank you for choosing HMS MOTORS!`;
+
+            window.open(`https://wa.me/919945534032?text=${message}`, '_blank');
+            closeModal('scheduleAppointmentModal');
+            alert('Appointment request sent via WhatsApp!');
+        });
+
+        // Owner Login
+        document.getElementById('ownerLoginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('ownerUsername').value;
+            const password = document.getElementById('ownerPassword').value;
+
+            if (username === 'hmsmotors' && password === 'hms@2025') {
+                closeModal('ownerLoginModal');
+                openModal('ownerDashboardModal');
+            } else {
+                alert('Invalid credentials!');
+            }
+        });
+
+        // Generate Bill
+        document.getElementById('billGenerationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const billNumber = 'HMS' + Math.floor(100000 + Math.random() * 900000);
+            const currentDate = new Date().toLocaleDateString('en-IN');
+            
+            currentBillData = {
+                billNumber: billNumber,
+                date: currentDate,
+                customerName: document.getElementById('billCustomerName').value,
+                customerPhone: document.getElementById('billCustomerPhone').value,
+                customerEmail: document.getElementById('billCustomerEmail').value,
+                bikeModel: document.getElementById('billBikeModel').value,
+                serviceDetails: document.getElementById('billServiceDetails').value,
+                amount: document.getElementById('billAmount').value
+            };
+
+            const billHTML = `
+                <div class="bill-header">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/0719d3a9-fa1b-4154-a9b5-22f1913e6cd6/2025-11-30T15-41-06-894Z-5ea5ee68-chat-image-1764517266877-0.jpg" alt="HMS MOTORS">
+                    <h2>HMS MOTORS</h2>
+                    <p>Expert Bike Repair Services</p>
+                    <p>30 Years of Excellence</p>
+                    <div class="bill-number">Invoice #${currentBillData.billNumber}</div>
+                    <p style="margin-top: 1rem;">Date: ${currentBillData.date}</p>
+                </div>
+
+                <div class="bill-section">
+                    <h3>Customer Information</h3>
+                    <div class="bill-row">
+                        <strong>Name:</strong>
+                        <span>${currentBillData.customerName}</span>
+                    </div>
+                    <div class="bill-row">
+                        <strong>Phone:</strong>
+                        <span>${currentBillData.customerPhone}</span>
+                    </div>
+                    <div class="bill-row">
+                        <strong>Email:</strong>
+                        <span>${currentBillData.customerEmail}</span>
+                    </div>
+                    <div class="bill-row">
+                        <strong>Bike Model:</strong>
+                        <span>${currentBillData.bikeModel}</span>
+                    </div>
+                </div>
+
+                <div class="bill-section">
+                    <h3>Service Details</h3>
+                    <p style="white-space: pre-wrap;">${currentBillData.serviceDetails}</p>
+                </div>
+
+                <div class="bill-total">
+                    Total Amount: ₹${parseFloat(currentBillData.amount).toFixed(2)}
+                </div>
+
+                <div class="bill-qr">
+                    <h3 style="color: #0066cc;">Scan to Pay</h3>
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/0719d3a9-fa1b-4154-a9b5-22f1913e6cd6/2025-11-30T15-41-07-034Z-a734852c-chat-image-1764517267016-1.jpg" alt="Payment QR Code">
+                    <p style="color: #666; margin-top: 1rem;">PhonePe Payment</p>
+                </div>
+
+                <div class="bill-footer">
+                    <p><strong>HMS MOTORS</strong></p>
+                    <p>📞 Suhel Sharif: 9886951220 | Ashran: 9945534032</p>
+                    <p>✉️ hmsmotors0@gmail.com</p>
+                    <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=12.918417,77.605361" target="_blank">View Location</a></p>
+                    <p style="margin-top: 1rem;">Thank you for choosing HMS MOTORS!</p>
+                    <p>30 Years of Trusted Service</p>
+                </div>
+            `;
+
+            document.getElementById('billContent').innerHTML = billHTML;
+            closeModal('ownerDashboardModal');
+            openModal('billDisplayModal');
+        });
+
+        // Send Bill via WhatsApp
+        function sendBillWhatsApp() {
+            const message = `*INVOICE - HMS MOTORS*%0A%0A` +
+                `*Invoice Number:* ${currentBillData.billNumber}%0A` +
+                `*Date:* ${currentBillData.date}%0A%0A` +
+                `*Customer Details:*%0A` +
+                `Name: ${currentBillData.customerName}%0A` +
+                `Phone: ${currentBillData.customerPhone}%0A` +
+                `Email: ${currentBillData.customerEmail}%0A` +
+                `Bike Model: ${currentBillData.bikeModel}%0A%0A` +
+                `*Service Details:*%0A${currentBillData.serviceDetails}%0A%0A` +
+                `*Total Amount:* ₹${parseFloat(currentBillData.amount).toFixed(2)}%0A%0A` +
+                `*Payment Instructions:*%0A` +
+                `Please scan the PhonePe QR code to make payment.%0A%0A` +
+                `*Contact Information:*%0A` +
+                `📞 Suhel Sharif: 9886951220%0A` +
+                `📞 Ashran: 9945534032%0A` +
+                `✉️ hmsmotors0@gmail.com%0A%0A` +
+                `Thank you for choosing HMS MOTORS!%0A` +
+                `30 Years of Trusted Service`;
+
+            window.open(`https://wa.me/919945534032?text=${message}`, '_blank');
+        }
+
+        // Download Bill as PDF
+        function downloadBillPDF() {
+            const element = document.getElementById('billContent');
+            const opt = {
+                margin: 10,
+                filename: `HMS_MOTORS_Invoice_${currentBillData.billNumber}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+
+        // Print Bill
+        function printBill() {
+            window.print();
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+
+        // Set minimum date for date inputs
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('preferredDate').setAttribute('min', today);
+        document.getElementById('appointmentDate').setAttribute('min', today);
+    </script>
 </body>
 </html>
